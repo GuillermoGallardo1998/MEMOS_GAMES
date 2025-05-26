@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/CSS/contador_de_vocales.css">
+
+    <title>Contador de Vocales</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <h1>Contador de Vocales</h1>
+            <p>Escribe un texto:</p>
+            <textarea id="texto" rows="5" placeholder="Escribe tu texto aquí..."></textarea>
+            <button onclick="contarVocales()" id="btnContar">Contar Vocales</button>
+            <button onclick="reiniciar()" id="btnReiniciar">Reiniciar</button>
+            <div class="resultado" id="resultado"></div>
+        </div>
+
+        <div class="resaltado">
+            <h2>Texto con Vocales en Rojo</h2>
+            <div id="textoResaltado"></div>
+        </div>
+    </div>
+
+    <script src="/JS/contador_de_vocales.js"></script> 
+</body>
+</html>
+

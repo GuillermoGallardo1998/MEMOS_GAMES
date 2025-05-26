@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Hangman - Juego del Ahorcado</title>
+<link rel="stylesheet" href="/CSS/hangman.css" />
+</head>
+<body>
+  <div class="container" role="main" aria-label="Juego del Ahorcado">
+    <h1>Juego del Ahorcado</h1>
+
+    <div class="hangman-container" aria-label="Dibujo del ahorcado" role="img">
+        <svg height="250" width="200" class="hangman-svg" aria-hidden="true">
+        <!-- Poste base -->
+            <line x1="20" y1="230" x2="180" y2="230" stroke-width="4"/>
+            <line x1="50" y1="230" x2="50" y2="20" stroke-width="4"/>
+            <line x1="50" y1="20" x2="130" y2="20" stroke-width="4"/>
+            <line x1="130" y1="20" x2="130" y2="40" stroke-width="4"/>
+
+            <!-- Cabeza -->
+            <circle cx="130" cy="60" r="20" stroke-width="4" fill="transparent" class="hangman-part" style="display:none"/>
+
+            <!-- Cuerpo -->
+            <line x1="130" y1="80" x2="130" y2="140" stroke-width="4" class="hangman-part" style="display:none"/>
+
+            <!-- Brazo izquierdo -->
+            <line x1="130" y1="90" x2="100" y2="120" stroke-width="4" class="hangman-part" style="display:none"/>
+
+            <!-- Brazo derecho -->
+            <line x1="130" y1="90" x2="160" y2="120" stroke-width="4" class="hangman-part" style="display:none"/>
+
+            <!-- Pierna izquierda -->
+            <line x1="130" y1="140" x2="100" y2="180" stroke-width="4" class="hangman-part" style="display:none"/>
+
+            <!-- Pierna derecha -->
+            <line x1="130" y1="140" x2="160" y2="180" stroke-width="4" class="hangman-part" style="display:none"/>
+        </svg>
+    </div>
+
+    <label for="categorySelect">Selecciona una categoría:</label>
+    <select id="categorySelect" aria-describedby="categoryHelp">
+      <option value="animales">Animales</option>
+      <option value="hogar">Cosas del Hogar</option>
+      <option value="computadora">Partes de una Computadora</option>
+    </select>
+
+    <p id="categoryHelp" class="help-text">
+      Elige una categoría para empezar a jugar.
+    </p>
+
+    <div class="word" aria-live="polite" aria-atomic="true" id="wordDisplay">_ _ _ _ _</div>
+
+    <div class="letters" role="group" aria-label="Letras para seleccionar" id="lettersContainer">
+      <!-- Botones letras A-Z -->
+    </div>
+
+    <div class="tries" id="triesLeft">Intentos restantes: 6</div>
+
+    <div class="status" id="statusMessage" role="alert" aria-live="assertive"></div>
+
+    <button class="reset-btn" id="resetBtn" aria-label="Reiniciar el juego">Reiniciar Juego</button>
+  </div>
+
+<script src="/JS/hangman.js"></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/CSS/guess_number.css">
+
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h1>🎯 ¡Adivina el Número Secreto!</h1>
+        <label for="level">Selecciona nivel de dificultad:</label>
+        <select id="level">
+            <option value="easy">Fácil (1 a 50)</option>
+            <option value="medium">Medio (1 a 150)</option>
+            <option value="hard">Difícil (1 a 450)</option>
+        </select>
+        <button onclick="startGame()">Comenzar</button>
+
+        <div class="game-area hidden" id="gameArea">
+            <p>Intentos restantes: <span id="attempts"></span></p>
+
+            <input type="number" id="userGuess" placeholder="Escribe tu número">
+            <button onclick="checkGuess()">Adivinar</button>
+
+            <p class="message" id="feedback"></p>
+
+            <div id="historyContainer">
+                <h4>Intentos previos:</h4>
+                <ul id="guessHistory"></ul>
+            </div>
+
+            <button id="resetButton" onclick="resetGame()">🔄 Reiniciar juego</button>
+        </div>
+  </div>
+
+
+
+
+
+
+    <script src="/JS/guess_number.js"></script>
+</body>
+</html>

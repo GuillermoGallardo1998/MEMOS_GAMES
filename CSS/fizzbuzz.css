@@ -1,0 +1,130 @@
+/* Variables CSS globales */
+:root {
+    --bg-color-light: #f0f4f8;
+    --text-color-light: #333;
+    --container-bg-light: white;
+
+    --bg-color-dark: #121212;
+    --text-color-dark: #f5f5f5;
+    --container-bg-dark: #1e1e1e;
+
+    --primary-color: #007bff;
+    --primary-hover: #0056b3;
+
+    --danger-color: #dc3545;
+    --danger-hover: #b02a37;
+}
+
+/* Tema claro por defecto */
+body {
+  background-color: var(--bg-color-light);
+  color: var(--text-color-light);
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+  background-color: var(--container-bg-light);
+  max-width: 600px;
+  margin: 0 auto;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  transition: background-color 0.3s;
+}
+
+.game-explanation {
+  color: #6c757d;
+  font-style: italic;
+}
+
+
+label {
+  font-weight: bold;
+}
+
+input[type="number"] {
+  width: 100%;
+  padding: 8px;
+  margin-top: 6px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+button {
+  background-color: var(--primary-color);
+  border: none;
+  color: white;
+  padding: 10px 18px;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: var(--primary-hover);
+}
+
+.results {
+  margin-top: 20px;
+  max-height: 300px;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 12px;
+  background-color: var(--bg-color-light);
+}
+
+.fizzbuzz-item {
+  padding: 4px 0;
+  font-weight: 600;
+}
+
+.fizz {
+  color: var(--primary-color);
+}
+
+.buzz {
+  color: var(--danger-color);
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: var(--bg-color-dark);
+    color: var(--text-color-dark);
+  }
+
+  .container {
+    background-color: var(--container-bg-dark);
+    box-shadow: none;
+  }
+
+  .results {
+    background-color: var(--container-bg-dark);
+    border-color: #444;
+  }
+
+  input[type="number"] {
+    background-color: #333;
+    border: 1px solid #555;
+    color: var(--text-color-dark);
+  }
+
+  button {
+    background-color: var(--primary-color);
+    color: white;
+  }
+  
+  button:hover {
+    background-color: var(--primary-hover);
+  }
+  
+  .game-explanation {
+    color: #adb5bd;
+  }
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/CSS/palindromo.css">
+
+    <title>Document</title>
+</head>
+<body>
+    <h1>Verificador de Palíndromos</h1>
+
+    <p>Un palíndromo es una palabra o frase que se lee igual al derecho y al revés, ignorando espacios y signos.</p>
+
+    <form id="palindromeForm">
+    <input type="text" id="inputText" placeholder="Escribe una frase o palabra..." required autocomplete="off" />
+    <button type="submit">Verificar</button>
+    </form>
+
+    <div class="result" id="resultMessage"></div>
+
+    <div class="card-container" id="cardContainer" style="display:none;">
+    <div class="card" aria-label="Tarjeta de comparación de texto y texto invertido">
+        <div class="card-face front" id="frontText"></div>
+        <div class="card-face back" id="backText"></div>
+    </div>
+    </div>
+
+
+
+
+
+
+
+    <script src="/JS/palindromo.js"></script>
+</body>
+</html>

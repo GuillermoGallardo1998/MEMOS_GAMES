@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/CSS/fizzbuzz.css">
+
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Juego FizzBuzz</h1>
+
+        <p class="game-explanation">
+        FizzBuzz es un juego donde se cuentan números del 1 al límite que elijas. 
+        Para cada número:<br/>
+        - Si es múltiplo de 3, se muestra <strong>Fizz</strong>.<br/>
+        - Si es múltiplo de 5, se muestra <strong>Buzz</strong>.<br/>
+        - Si es múltiplo de ambos (3 y 5), se muestra <strong>FizzBuzz</strong>.<br/>
+        - Si no, se muestra el número.<br/>
+        </p>
+        
+        <label for="limitInput">Ingresa el límite (número máximo):</label>
+        <input type="number" id="limitInput" min="1" placeholder="Ejemplo: 100" />
+        <button id="playBtn">Jugar FizzBuzz</button>
+
+        <div class="results" id="results"></div>
+  </div> 
+
+
+
+    <script src="/JS/fizzbuzz.js"></script>
+</body>
+</html>

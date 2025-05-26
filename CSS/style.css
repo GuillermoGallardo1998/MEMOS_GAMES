@@ -1,0 +1,203 @@
+:root {
+  --bg-color-light: #f0f4f8;
+  --text-color-light: #333;
+  --container-bg-light: white;
+
+  --bg-color-dark: #121212;
+  --text-color-dark: #f5f5f5;
+  --container-bg-dark: #1e1e1e;
+
+  --primary-color: #007bff;
+  --primary-hover: #0056b3;
+
+  --danger-color: #dc3545;
+  --danger-hover: #b02a37;
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Layout Base */
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-color-light);
+  color: var(--text-color-light);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  background-color: var(--container-bg-dark);
+  color: white;
+  padding: 14px 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+header h1 {
+  font-size: 2.5rem;
+}
+
+/* Main */
+main {
+  background-color: var(--bg-color-dark);
+  padding: 40px 5vw;
+  flex: 1 0 auto;     /* Permite que main crezca con su contenido */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  box-sizing: border-box;
+  /* Quitar cualquier height fijo o min-height */
+}
+
+.cards-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  height: auto;      /* Que crezca con contenido */
+}
+
+/* Cards: altura auto para crecer con contenido */
+.game-card {
+  background: var(--container-bg-dark);
+  color: var(--text-color-dark);
+  border-radius: 12px;
+  padding: 30px 20px;
+  text-decoration: none;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.25);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow: hidden;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  height: auto;
+}
+
+/* Hover: sube y cambia fondo */
+.game-card:hover {
+  transform: translateY(-5px);
+  background: linear-gradient(120deg, rgba(0, 86, 179, 1) 0%, rgba(253, 29, 29, 1) 78%, rgba(176, 42, 55, 1) 100%);
+}
+
+/* Título */
+.card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Descripción oculta inicialmente */
+.card-desc {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, opacity 0.4s ease;
+  font-size: 1rem;
+}
+
+/* Mostrar descripción al hacer hover */
+.game-card:hover .card-desc {
+  max-height: 500px; /* suficiente para mostrar contenido */
+  opacity: 1;
+}
+
+/* Para pantallas más grandes: grid */
+@media (min-width: 768px) {
+  .cards-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .cards-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+
+
+/* Footer */
+footer {
+  background-color: var(--container-bg-dark);
+  color: #ccc;
+  font-size: 0.9rem;
+  padding: 14px 40px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.footer-left {
+  text-align: left;
+}
+
+.footer-right {
+  text-align: right;
+}
+
+.footer-right p {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-right a {
+  color: var(--primary-color);
+  text-decoration: none;
+  margin-left: 15px;
+  transition: color 0.3s ease;
+}
+
+.footer-right a:hover {
+  color: var(--bg-color-light);
+}
+
+/* Footer responsive en pantallas pequeñas */
+@media (max-width: 600px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-left,
+  .footer-right {
+    text-align: center;
+    margin: 10px 0;
+  }
+
+  .footer-right a {
+    margin: 0 10px;
+  }
+}
+
+
+@media (min-width: 768px) {
+  .game-card {
+    min-height: 220px; /* Ajusta este valor a lo que necesites */
+  }
+}
+
+@media (min-width: 1025px) {
+  .game-card {
+    min-height: 300px;
+  }
+  .cards-container {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px; /* espacio mayor entre cards */
+  }
+}

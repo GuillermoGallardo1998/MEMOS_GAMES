@@ -1,0 +1,134 @@
+/* variables CSS globales */
+:root {
+  --bg-color-light: #f0f4f8;
+  --text-color-light: #333;
+  --container-bg-light: white;
+
+  --bg-color-dark: #121212;
+  --text-color-dark: #f5f5f5;
+  --container-bg-dark: #1e1e1e;
+
+  --primary-color: #007bff;
+  --primary-hover: #0056b3;
+
+  --danger-color: #dc3545;
+  --danger-hover: #b02a37;
+}
+
+body {
+  margin: 0;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: var(--bg-color-light);
+  color: var(--text-color-light);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: var(--bg-color-dark);
+    color: var(--text-color-light);
+  }
+
+  .container {
+    background-color: var(--container-bg-dark);
+  }
+
+  input, select {
+    background-color: #2a2a2a;
+    color: var(--text-color-dark);
+    border: 1px solid #555;
+  }
+
+  input::placeholder {
+    color: #aaa;
+  }
+
+  button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+  }
+
+  button:hover {
+    background-color: var(--primary-hover);
+  }
+
+  option {
+    background-color: #2a2a2a;
+    color: var(--text-color-dark);
+  }
+}
+
+.container {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  background-color: var(--container-bg-light);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  color: var(--primary-color);
+}
+
+select,
+input[type="number"],
+button {
+  padding: 10px;
+  font-size: 16px;
+  margin: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--primary-hover);
+}
+
+.message {
+  font-weight: bold;
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+#historyContainer {
+  margin-top: 20px;
+}
+
+#guessHistory {
+  list-style: none;
+  padding-left: 0;
+  max-height: 150px;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+#guessHistory li {
+  padding: 4px;
+  border-bottom: 1px solid #eee;
+}
+
+#resetButton {
+  margin-top: 20px;
+  background-color: var(--danger-color);
+}
+
+#resetButton:hover {
+  background-color: var(--danger-hover);
+}

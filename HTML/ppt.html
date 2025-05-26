@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <link rel="stylesheet" href="/CSS/ppt.css">
+
+  <title>Piedra, Papel o Tijera</title>
+</head>
+
+<body>
+  <h1>Piedra, Papel o Tijera - Mejor de 5</h1>
+
+  <label for="mode">Modo de juego:</label>
+  <select id="mode">
+    <option value="cpu">Jugador vs CPU</option>
+    <option value="pvp">Jugador 1 vs Jugador 2</option>
+  </select>
+
+  <div class="choices">
+    <div class="player-choices" id="player1-choices">
+      <div class="choice" data-choice="piedra">🧱 Piedra</div>
+      <div class="choice" data-choice="papel">📄 Papel</div>
+      <div class="choice" data-choice="tijera">✂️ Tijera</div>
+    </div>
+  </div>
+
+  <div class="result" id="result"></div>
+  <button id="reset-btn" style="display:none;">Reiniciar Juego</button>
+
+  <h2>Historial de Partidas</h2>
+  <div class="table-container">
+    <table id="history-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Jugador 1</th>
+          <th>Jugador 2 / CPU</th>
+          <th>Resultado</th>
+        </tr>
+      </thead>
+      <tbody id="history-body">
+      </tbody>
+    </table>
+  </div>
+
+  <script src="/JS/ppt.js"></script>
+</body>
+</html>
